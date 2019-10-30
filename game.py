@@ -15,15 +15,10 @@ computer = choices[randint(0, 2)]
 player = False
 
 while player is False:
-    print("*****************************************\n")
-    print("Computer Lives: ", computer_lives, "\5")
-    print("Player Lives: ", player_lives, "\5")
-    print("Choose your weapon!\n")
-    print("*****************************************\n")
 
     player = input("choose rock, paper or scissors: \n\n")
     player = player.lower()
-    print("*****************************************\n")
+    
 
     print("Computer choose ", computer, "\n")
     print("Player choose ", player, "\n")
@@ -38,31 +33,31 @@ while player is False:
         if computer == "paper":
             print("YOU LOST", computer, "covers", player, "\n")
             player_lives = player_lives -1
-            # computer_lives = computer_lives +1
+            
         else:
             print("YOU WIN", player, "smashes", computer, "\n")
             computer_lives = computer_lives -1
-           # player_lives = player_lives +1
+           
 
     elif player.lower() == "paper":
         if computer == "scissors":
             print("YOU LOST", computer, "cuts", player, "\n")
             player_lives = player_lives -1
-           # computer_lives = computer_lives +1
+           
         else:
             print("YOU WIN", player, "covers", computer, "\n")
             computer_lives = computer_lives -1
-            player_lives = player_lives +1
+            
 
     elif player.lower() == "scissors":
         if computer == "rock":
             print("YOU LOST", computer, "smashes", player, "\n")
             player_lives = player_lives -1
-           # computer_lives = computer_lives +1
+           
         else:
             print("YOU WIN", player, "cuts", computer, "\n")
             computer_lives = computer_lives -1
-           # player_lives = player_lives +1
+           
     
     else:
         print("You can use that Weapon right now!!, Try Again")
