@@ -1,9 +1,11 @@
 # import the random package so that we can generate a random choice
 from random import randint
+from gameFunctions import winlose
+from gameFunctions import compare
 
 #set up variables for players and AI lives
-player_lives = 5
-computer_lives = 5
+player_lives = 1
+computer_lives = 1
 
 # choices is an array => an array s a container that can hold multiples values
 choices = ["rock", "paper", "scissors"]
@@ -14,6 +16,9 @@ computer = choices[randint(0, 2)]
 #set up the game loop so that we dont have to to restart all the time
 player = False
 
+# define a python function that takes an argument
+
+
 while player is False:
     print("*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*\n")
     print("Enemy Lives: ", computer_lives, "\5")
@@ -23,7 +28,7 @@ while player is False:
 
     player = input("choose rock, paper or scissors: \n\n")
     player = player.lower()
-    print("*****************************************\n")
+    print("*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*@*\n")
 
     print("Your Enemy choose ", computer, "\n")
     print("You choose ", player, "\n")
@@ -68,35 +73,11 @@ while player is False:
         print("You can use that Weapon right now!!, Try Again")
 
     if player_lives is 0:
-        print("GAME OVER SUCKA!!! Play Again?..")
-        choice = input("Y / N")
-        print(choice)
-
-        if (choice is "N") or (choice is "n"):
-            print("You chose to quit...")
-            exit()
+        winlose.winorlose("Lose")
         
-        elif (choice is "Y") or (choice is "y"):
-            player_lives = 5
-            computer_lives = 5
-            player = False
-            computer =  choices[randint(0,2)]
-
 
     elif computer_lives is 0:
-        print("YOU WON MY DUDE, CONGRATS!!! Play Again?..\n")
-        choice = input("Y / N")
-        print(choice)
-
-        if (choice is "N") or (choice is "n"):
-            print("You chose to quit...")
-            exit()
-        
-        elif (choice is "Y") or (choice is "y"):
-            player_lives = 5
-            computer_lives = 5
-            player = False
-            computer =  choices[randint(0,2)]    
+        winlose.winorlose("Win")
         
     else:
         player = False
